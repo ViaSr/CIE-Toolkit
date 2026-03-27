@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CIE-Toolkit"
+version = "0.1.0"
+description = "CIE 1931 color science toolkit for display calibration and color space conversion"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{name = "Landon Alison"}]
+dependencies = [
+    "numpy>=1.21",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5", "plotly>=5.0"]
+science = ["colour-science>=0.4"]
+dev = ["pytest>=7.0", "matplotlib>=3.5"]
+
+[tool.setuptools.packages.find]
+include = ["cie_toolkit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
