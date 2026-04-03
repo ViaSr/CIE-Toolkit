@@ -2,6 +2,23 @@
 
 A Python/NumPy implementation of fundamental CIE colorimetry for display calibration and color space conversion. Built for learning and practical use — every function maps to a real operation in the display calibration workflow.
 
+
+## Why I Built This
+
+I started building this while exploring how display calibration systems handle color 
+accuracy across different devices. The core problem — converting 
+between device-dependent RGB and device-independent XYZ — turns out 
+to be pure linear algebra, and implementing it from scratch made the 
+math click in a way that using libraries never did. Every function 
+in this toolkit maps directly to a real operation in a display 
+calibration workflow: measuring a display's primaries, building the 
+conversion matrix, computing color error, and deriving a correction 
+matrix to compensate for hardware drift. The signal processing 
+patterns here — transform, calibrate, correct — translate directly 
+to other domains where you're reading raw sensor data and need to 
+get it into a standardized, meaningful space.
+
+
 ## What it does
 
 ```python
